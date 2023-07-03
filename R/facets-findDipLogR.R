@@ -144,7 +144,7 @@ findDiploidLogR <- function(out, cnlr) {
             # need 2 or more clusters with 2+0 call; otherwise it is 1+1
             if (sum(out1$acn==2) > 1) {
                 # get optimal cellular fraction 
-                rho <- seq(0.01, 0.99, by=0.01)
+                rho <- seq(0.90, 0.99, by=0.01)
                 # deviance
                 cf2 <- out2[out1$acn==2,3]
                 nm <- out1$num.mark[out1$acn==2]
