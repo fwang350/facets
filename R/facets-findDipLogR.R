@@ -293,7 +293,7 @@ km2class <- function(cnlr.med, num.mark) {
 acnsplit <- function(lr0, lr1, lorsq) {
     deltalr <- (lr0-lr1)
     llor <- log(sqrt(lorsq))
-    rho <- seq(0.01, 0.99, by=0.01)
+    rho <- seq(0.90, 0.99, by=0.01)
     # log-logOR has a much wider range so weigh logR contribution more
     util3.0 <- 5*(deltalr-(log2(2+2*rho) - log2(2+rho)))^2 + (llor-log(log((1+2*rho)/(1-rho))))^2
     util2.0 <- 5*(deltalr-(log2(2+2*rho) - log2(2)))^2 + (llor-log(log((1+rho)/(1-rho))))^2
