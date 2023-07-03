@@ -144,7 +144,7 @@ findDiploidLogR <- function(out, cnlr) {
             # need 2 or more clusters with 2+0 call; otherwise it is 1+1
             if (sum(out1$acn==2) > 1) {
                 # get optimal cellular fraction 
-                rho <- seq(0.90, 0.99, by=0.01)
+                rho <- seq(0.75, 0.99, by=0.01)
                 # deviance
                 cf2 <- out2[out1$acn==2,3]
                 nm <- out1$num.mark[out1$acn==2]
@@ -293,7 +293,7 @@ km2class <- function(cnlr.med, num.mark) {
 acnsplit <- function(lr0, lr1, lorsq) {
     deltalr <- (lr0-lr1)
     llor <- log(sqrt(lorsq))
-    rho <- seq(0.90, 0.99, by=0.01)
+    rho <- seq(0.75, 0.99, by=0.01)
     # log-logOR has a much wider range so weigh logR contribution more
     util3.0 <- 5*(deltalr-(log2(2+2*rho) - log2(2+rho)))^2 + (llor-log(log((1+2*rho)/(1-rho))))^2
     util2.0 <- 5*(deltalr-(log2(2+2*rho) - log2(2)))^2 + (llor-log(log((1+rho)/(1-rho))))^2
